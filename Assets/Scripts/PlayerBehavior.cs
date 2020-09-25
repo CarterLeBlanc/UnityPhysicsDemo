@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
 [RequireComponent(typeof(Animator))]
-public class PlayerMovementBehavior : MonoBehaviour
+public class PlayerBehavior : MonoBehaviour
 {
     private CharacterController _controller = null;
     private Animator _animator = null;
@@ -47,6 +47,12 @@ public class PlayerMovementBehavior : MonoBehaviour
                     ragdoll.ragdollEnabled = true;
                 }
             }
+        }
+
+        //Close the game when the escape key is pressed
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
     }
 }
